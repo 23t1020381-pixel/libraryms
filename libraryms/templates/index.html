@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% from 'macros.html' import book_card %}{% block title %}Trang chủ - LibraryMS{% endblock %}{% block content %}
+<div class="p-4 p-md-5 mb-4 rounded-3 hero"><h1>Thư viện của bạn</h1><p class="lead">Tra cứu sách nhanh chóng với LibraryMS.</p><a class="btn btn-success" href="{{ url_for('books') }}">Xem danh sách sách</a></div>
+<div class="row g-3 mb-4"><div class="col-md-6"><div class="stat"><span>Tổng số đầu sách</span><strong>{{ total }}</strong></div></div><div class="col-md-6"><div class="stat"><span>Sách sẵn sàng</span><strong>{{ available }}</strong></div></div></div>
+<h2 class="h4 mb-3">3 sách xuất bản gần đây</h2><div class="row g-3">{% for book in recent %}<div class="col-md-4">{{ book_card(book) }}</div>{% endfor %}</div>{% endblock %}
